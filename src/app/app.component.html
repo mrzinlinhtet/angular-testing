@@ -1,7 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-6">
+    <div class="col-md-6">
       <h1>Gaga</h1>
+      <input class="form-control" [(ngModel)]="newItem" type="text" name="" id="" #item>
+      <button class="btn btn-primary" (click)="addItem()">Add</button>
+
+      <ul *ngFor="let item of items;let ind=index">
+        <li>{{item}}</li>
+        <i (click)="removeItem(ind)">X</i>      
+      </ul>
     </div>
   </div>
 </div>

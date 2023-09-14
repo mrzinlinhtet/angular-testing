@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todolist';
+  items = ['HTML', 'CSS', 'JS', 'Angular'];
+  newItem = '';
+
+  addItem(){
+    this.items.push(this.newItem);
+    this.newItem = '';
+  }
+  removeItem(index: number){
+    this.items.splice(index,1);
+  }
 }
