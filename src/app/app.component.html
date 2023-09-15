@@ -1,14 +1,38 @@
-<div class="container">
+<div class="container my-5">
   <div class="row">
-    <div class="col-md-6">
-      <h1>Gaga</h1>
+    <div class="col-md-12">
+      <!-- <h1>{{alphas | sort: "desc"}}</h1>
+      <h1>{{digits | gamani}}</h1>
+      <h1>{{title | lowercase}}</h1>
+      <p>{{day}}</p>
+      <p>{{day | date}}</p>
+      <p>{{day | date : 'shortDate'}}</p>
+      <p>{{day | date : 'fullDate'}}</p>
       <input class="form-control" [(ngModel)]="newItem" type="text" name="" id="" #item>
       <button class="btn btn-primary" (click)="addItem()">Add</button>
 
       <ul *ngFor="let item of items;let ind=index">
         <li>{{item}}</li>
         <i (click)="removeItem(ind)">X</i>      
-      </ul>
+      </ul> -->
+
+      <form action="" class="form p-5 w-50 table-bordered" #userForm="ngForm" (ngSubmit)="submitData(userForm.value)">
+        <div>
+          <label for="" class="form-label">Name</label>
+          <input type="text" name="name" id="" class="form-control" ngModel />
+        </div>
+        <div>
+          <label for="" class="form-label">Password</label>
+          <input type="password" name="password" id="" class="form-control" ngModel />
+        </div>
+        <div>
+          <label for="" class="form-label">Language</label>
+          <select name="language" id="" class="form-control" ngModel>
+            <option *ngFor="let lang of items" value="{{lang}}">{{lang}}</option>
+          </select>
+        </div>
+        <button class="btn btn-primary my-3">Login</button>
+      </form>
     </div>
   </div>
 </div>
