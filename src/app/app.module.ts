@@ -3,24 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule  } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AddPipe } from './AddPipe';
 import { SortPipe } from './SortPipe';
 
-
-
 @NgModule({
-  declarations: [
-    SortPipe,
-    AddPipe,
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-  ],
+  declarations: [SortPipe, AddPipe, AppComponent],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

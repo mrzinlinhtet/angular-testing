@@ -16,22 +16,22 @@
         <i (click)="removeItem(ind)">X</i>      
       </ul> -->
 
-      <form action="" class="form p-5 w-50 table-bordered" #userForm="ngForm" (ngSubmit)="submitData(userForm.value)">
+      <form action="" class="form p-5 w-50 table-bordered" [formGroup]="form" (ngSubmit)="submitData(form.value)">
         <div>
           <label for="" class="form-label">Name</label>
-          <input type="text" name="name" id="" class="form-control" ngModel />
+          <input type="text" name="name" id="" class="form-control" formControlName="uname" />
         </div>
         <div>
           <label for="" class="form-label">Password</label>
-          <input type="password" name="password" id="" class="form-control" ngModel />
+          <input type="password" name="password" id="" class="form-control" formControlName="upassword" />
         </div>
         <div>
           <label for="" class="form-label">Language</label>
-          <select name="language" id="" class="form-control" ngModel>
+          <select name="language" id="" class="form-control" formControlName="ulang">
             <option *ngFor="let lang of items" value="{{lang}}">{{lang}}</option>
           </select>
         </div>
-        <button class="btn btn-primary my-3">Login</button>
+        <button [disabled]="!form.valid" class="btn btn-secondary my-3">Login</button>
       </form>
     </div>
   </div>
